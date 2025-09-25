@@ -19,10 +19,10 @@ It provides a simplistic folder heirachy structure that allows for easy modifica
 
 # Endpoints:
 
-[GET] /api/location
+[GET] /api/locations
 Basic endpoint used to retrieve entire dataset. Used for testing.
 
-[GET] /api/location/{name}/{date}
+[GET] /api/locations/{name}/{date}
 Returns the location matching the provided name and time.
 
 [GET] /api/persons/{location}/{date}
