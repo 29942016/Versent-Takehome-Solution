@@ -1,0 +1,37 @@
+Declaration:
+I, Oliver Buckler confirm that this project made no use AI tools or outside assistance in its creation.
+
+Application Architecture:
+
+./                          |
+    ./node_modules          |
+    ./src                   |
+        ./configs           | Contains the config files required by this application.
+        ./controllers       | Contains the endpoint request & response logic.
+        ./middlewares       | Contains interceptors and their logic.
+        ./models            | Contains class definitions.
+        ./routes            | Contains endpoint routes associated with their controller. 
+        ./services          | Contains all business logic for each controller.
+
+Architecture Rationale:
+The standard model, view and service architecture was more than sufficient to complete this project.
+It provides a simplistic folder heirachy structure that allows for easy modifications and scaling.
+
+Endpoints:
+
+[GET] /api/location
+Basic endpoint used to retrieve entire dataset. Used for testing.
+
+[GET] /api/location/{name}/{date}
+Returns the location matching the provided name and time.
+
+[GET] /api/persons/{location}/{date}
+Given a location and a time, return all of the associated people.
+
+[GET] /api/persons/getCloseContacts/{name}/{date}
+Given a name and date, find all other people that were present at the same location and the same time.
+
+See individual controllers and services for extended information.
+
+# Docker build command
+docker build -t vmr-takehome-solution .

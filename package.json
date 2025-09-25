@@ -1,0 +1,29 @@
+{
+  "name": "vmr-takehome-solution",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A solution for the Versent take home challenge involving contact tracing.",
+  "main": "server.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node src/server.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/server.ts",
+    "lint": "eslint -c \".eslintrc.cjs\" \"src/services/locationService.ts\""
+  },
+  
+  "author": "Oliver Buckler",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "eslint": "^9.36.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
