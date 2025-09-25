@@ -36,7 +36,7 @@ export const getPresentAtTime = (req: Request, res: Response, next: NextFunction
 */
 export const getCloseContacts = (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { name, time: date } = req.params;
+        const { name, date } = req.params;
 
         if(name === undefined) {
             res.status(404).json({message: "Missing 'Location' parameter."});
