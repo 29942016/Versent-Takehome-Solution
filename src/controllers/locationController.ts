@@ -4,7 +4,7 @@ import LocationService from '../services/locationService.ts';
 const service = new LocationService();
 
 /* 
-    /api/location
+    /api/locations
     Return a list of all locations in the dataset.
 */
 export const get = (req: Request, res: Response, next: NextFunction) => {
@@ -16,7 +16,7 @@ export const get = (req: Request, res: Response, next: NextFunction) => {
 }
 
 /* 
-    /api/location/{name}/{date}
+    /api/locations/{name}/{date}
     @param name Find the person specified by this name.
     @param date Only include persons present during this time.
     Return the location matching the provided name.

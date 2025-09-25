@@ -24,8 +24,8 @@ class LocationService {
             const wasPresentAtLocation = location.persons.filter(p => p.person === name);
 
             // Check if the person was present at the specified date.
-            const wasPresentAtDate = wasPresentAtLocation.filter(l => l.dates.find(date => 
-                    new Date(date).getTime() === new Date(date).getTime())
+            const wasPresentAtDate = wasPresentAtLocation.filter(l => l.dates.find(d => 
+                    new Date(d).getTime() === new Date(date).getTime())
             ).length !== 0;
 
             // If they were, then add them to the collection and go to next location.
