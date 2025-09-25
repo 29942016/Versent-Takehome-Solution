@@ -1,7 +1,7 @@
-Declaration:
+# Declaration:
 I, Oliver Buckler confirm that this project made no use AI tools or outside assistance in its creation.
 
-Application Architecture:
+# Application Architecture:
 
 ./                          |
     ./node_modules          |
@@ -13,16 +13,16 @@ Application Architecture:
         ./routes            | Contains endpoint routes associated with their controller. 
         ./services          | Contains all business logic for each controller.
 
-Architecture Rationale:
+# Architecture Rationale:
 The standard model, view and service architecture was more than sufficient to complete this project.
 It provides a simplistic folder heirachy structure that allows for easy modifications and scaling.
 
-Endpoints:
+# Endpoints:
 
-[GET] /api/location
+[GET] /api/locations
 Basic endpoint used to retrieve entire dataset. Used for testing.
 
-[GET] /api/location/{name}/{date}
+[GET] /api/locations/{name}/{date}
 Returns the location matching the provided name and time.
 
 [GET] /api/persons/{location}/{date}
