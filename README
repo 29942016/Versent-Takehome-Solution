@@ -35,8 +35,16 @@ See individual controllers and services for extended information.
 
 # Usage
 
+## Development
 $ npm run install
 $ npm run dev
 
-# Docker build command
+Access at localhost:3000
+
+## Release
 docker build -t vmr-takehome-solution .
+docker run -p 3000:3000 vmr-takehome-solution
+
+Access at localhost:3000
+
+
