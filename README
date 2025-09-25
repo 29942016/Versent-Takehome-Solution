@@ -33,5 +33,10 @@ Given a name and date, find all other people that were present at the same locat
 
 See individual controllers and services for extended information.
 
+# Usage
+
+$ npm run install
+$ npm run dev
+
 # Docker build command
 docker build -t vmr-takehome-solution .
