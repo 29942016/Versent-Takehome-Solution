@@ -3,6 +3,7 @@ I, Oliver Buckler confirm that this project made no use AI tools or outside assi
 
 # Architecture
 ## Application
+```
 ./                          |
     ./node_modules          |
     ./src                   |
@@ -12,9 +13,11 @@ I, Oliver Buckler confirm that this project made no use AI tools or outside assi
         ./models            | Contains class definitions.
         ./routes            | Contains endpoint routes associated with their controller. 
         ./services          | Contains all business logic for each controller.
+```
 ## Deployment Pipeline
 A github action has been created to automate the full build & deployment process. 
 The flow is as follows:
+
 
 1) A github action detects changes to main.
 2) On change, initialise a Github runner and fetch the source from the main branch.
@@ -34,15 +37,19 @@ This allows for seemless deployment without having to manually scp docker images
 # Endpoints:
 
 [GET] /api/locations
+
 Basic endpoint used to retrieve entire dataset. Used for testing.
 
 [GET] /api/locations/{name}/{date}
+
 Returns the location matching the provided name and time.
 
 [GET] /api/persons/{location}/{date}
+
 Given a location and a time, return all of the associated people.
 
 [GET] /api/persons/getCloseContacts/{name}/{date}
+
 Given a name and date, find all other people that were present at the same location and the same time.
 
 See individual controllers and services for extended information.
@@ -50,15 +57,17 @@ See individual controllers and services for extended information.
 # Usage
 
 ## Development
-$ npm run install
-$ npm run dev
+`$ npm run install`
+`$ npm run dev`
 
 Access at localhost:3000
 
 ## Release
-docker build -t vmr-takehome-solution .
-docker run -p 3000:3000 vmr-takehome-solution
+To do a manual release:
+`$ docker build -t vmr-takehome-solution .`
+`$ docker run -p 3000:3000 vmr-takehome-solution`
 
+Otherwise any changes to the main branch will trigger an automatic deployment.
 Access at localhost:3000
 
 
