@@ -1,8 +1,8 @@
 # Declaration:
 I, Oliver Buckler confirm that this project made no use AI tools or outside assistance in its creation.
 
-# Application Architecture:
-
+# Architecture
+## Application
 ./                          |
     ./node_modules          |
     ./src                   |
@@ -12,8 +12,20 @@ I, Oliver Buckler confirm that this project made no use AI tools or outside assi
         ./models            | Contains class definitions.
         ./routes            | Contains endpoint routes associated with their controller. 
         ./services          | Contains all business logic for each controller.
+## Deployment Pipeline
+A github action has been created to automate the full build & deployment process. 
+The flow is as follows:
+1) A github action detects changes to main.
+2) On change, initialise a Github runner and fetch the source from the main branch.
+3) The runner will then use the repository's Docker config to build the image.
+4) Push the image to the repository.
+5) From the runner, SSH to the EC2 instance and auth to the Github repository.
+6) From the EC2 instance, Pull the newly created image.
+7) Load the container into Docker and bring it online using the docker-compose config rules.
+8) Cleanup leftover artifacts in the directory and exit.
 
-# Architecture Rationale:
+# Architecture Rationale
+## Application
 The standard model, view and service architecture was more than sufficient to complete this project.
 It provides a simplistic folder heirachy structure that allows for easy modifications and scaling.
 
