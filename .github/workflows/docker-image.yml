@@ -28,10 +28,14 @@ jobs:
     name: deploy image
     runs-on: ubuntu-latest
 
+    # Note EC2 inbound rules needs to allow runner ip.
     steps:
-    - name: install ssh keys
+    - name: install ssh key
       run: |
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ec2-user@ec2-13-239-121-49.ap-southeast-2.compute.amazonaws.com "cd ~/actions && touch hello && exit"
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
+    - name: clean
+      run:  rm -rf ~/.ssh
