@@ -26,7 +26,7 @@ The flow is as follows:
 5) From the runner, SSH to the EC2 instance and auth to the Github repository.
 6) From the EC2 instance, Pull the newly created image.
 7) Load the container into Docker and bring it online using the docker-compose config rules.
-8) Cleanup leftover artifacts in the directory and exit.
+8) Cleanup leftover ssh information in the runner and exit.
 
 # Architecture Rationale
 The standard model, view and service architecture was more than sufficient to complete this project.
