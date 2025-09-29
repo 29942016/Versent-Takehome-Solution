@@ -26,9 +26,10 @@ The flow is as follows:
 8) Cleanup leftover artifacts in the directory and exit.
 
 # Architecture Rationale
-## Application
 The standard model, view and service architecture was more than sufficient to complete this project.
 It provides a simplistic folder heirachy structure that allows for easy modifications and scaling.
+The deployment process allows automatic deployment as soon as any change is detected in the main branch. 
+This allows for seemless deployment without having to manually scp docker images onto the server and loading them.
 
 # Endpoints:
 
