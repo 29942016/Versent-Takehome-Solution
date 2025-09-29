@@ -15,6 +15,7 @@ I, Oliver Buckler confirm that this project made no use AI tools or outside assi
 ## Deployment Pipeline
 A github action has been created to automate the full build & deployment process. 
 The flow is as follows:
+
 1) A github action detects changes to main.
 2) On change, initialise a Github runner and fetch the source from the main branch.
 3) The runner will then use the repository's Docker config to build the image.
