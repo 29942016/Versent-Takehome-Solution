@@ -34,4 +34,4 @@ jobs:
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
     - name: connect and pull
-      run: ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ~/actions && touch hello && exit"
+      run: ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ec2-user@ec2-13-239-121-49.ap-southeast-2.compute.amazonaws.com "cd ~/actions && touch hello && exit"
